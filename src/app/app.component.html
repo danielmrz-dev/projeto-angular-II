@@ -1,0 +1,11 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav position="end" mode="over" class="padding">
+      Aqui irá o conteúdo do CARRINHO
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-header (openSidenav)="sidenav.toggle()"></app-header>
+      <main>
+        <app-cards-container></app-cards-container>
+      </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
