@@ -1,0 +1,31 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    &__icon {
+        width: 20px;
+        cursor: pointer;
+        transition: scale .3s ease, opacity .3s ease;
+        &:hover:not(:last-child) {
+            opacity: .2;
+        }
+        &--hover {
+            background-color: transparent;
+            border: none;
+            display: flex;
+            &:hover {
+                scale: 1.1;
+            }
+        }
+    }
+    &__title {
+        font-size: 1.25rem;
+        margin: 0;
+    }
+    &__icons {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+}
