@@ -1,1 +1,13 @@
-<p>perfume-card works!</p>
+<div class="perfume" [id]="perfume.id">
+    <span *ngIf="perfume.promocao" class="perfume__promocao">PROMOÇÃO</span>
+    <img [src]="perfume.imagem" alt="" class="perfume__imagem">
+    <h2 class="perfume__name"> {{ perfume.perfume | uppercase }} </h2>
+
+    <div class="perfume__info-container">
+        <span class="perfume__info">Preço:</span>
+        <p> {{ perfume.preco | currency : "BRL" }} </p>
+    </div>
+    <button class="perfume__add-to-cart-btn" (click)="onClick()">
+        <img src="plus-solid.svg" alt="" class="perfume__add-to-cart-btn-img">
+    </button>
+</div>

@@ -1,3 +1,6 @@
-<div>
-    <app-perfume-card></app-perfume-card>
+<div class="container">
+    <app-perfume-card 
+        *ngFor="let perfume of perfumesList" [perfume]="perfume"
+        (addPerfumeToCart)="sendPerfumeToCart($event)"
+    ></app-perfume-card>
 </div>

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { IPerfume } from '../../interfaces/perfume.interface';
 
 @Component({
   selector: 'app-perfume-card',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrl: './perfume-card.component.scss'
 })
 export class PerfumeCardComponent {
+
+  @Input({ required: true }) perfume: IPerfume = {} as IPerfume;
+
+  @Output() addPerfumeToCart = new EventEmitter<IPerfume>();
+
+  onClick() {
+    this.addPerfumeToCart.emit(this.perfume)
+  }
 
 }

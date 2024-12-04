@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialogContent } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -10,12 +11,14 @@ import { MatButtonModule } from '@angular/material/button';
     CommonModule,
     MatSidenavModule,
     MatRadioModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogContent
   ],
   exports: [
     MatSidenavModule,
     MatRadioModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogContent
   ]
 })
 export class AngularMaterialModule { }
