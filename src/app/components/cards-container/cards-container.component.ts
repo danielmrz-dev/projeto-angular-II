@@ -10,6 +10,7 @@ import { PerfumesService } from '../../services/perfumes.service';
 export class CardsContainerComponent implements OnInit {
 
   @Output() addPerfumeToCart = new EventEmitter<IPerfume>();
+  @Output() openModal = new EventEmitter<void>();
 
   perfumesList: IPerfume[] = []
   perfumesService = inject(PerfumesService)
@@ -22,6 +23,7 @@ export class CardsContainerComponent implements OnInit {
 
   sendPerfumeToCart(perfume: IPerfume) {
     this.addPerfumeToCart.emit(perfume)
+    this.openModal.emit();
   }
   
 }

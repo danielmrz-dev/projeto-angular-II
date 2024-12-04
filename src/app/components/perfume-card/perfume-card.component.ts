@@ -11,9 +11,11 @@ export class PerfumeCardComponent {
   @Input({ required: true }) perfume: IPerfume = {} as IPerfume;
 
   @Output() addPerfumeToCart = new EventEmitter<IPerfume>();
+  @Output() openModal = new EventEmitter<void>();
 
   onClick() {
     this.addPerfumeToCart.emit(this.perfume)
+    this.openModal.emit();
   }
 
 }

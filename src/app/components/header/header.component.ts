@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,10 +7,12 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class HeaderComponent {
   
+  @Input({ required: true }) badgeNumber: number = 0
+  @Input({ required: true }) badgeHidden: boolean = false
+  @Output() openSidenav = new EventEmitter<void>();
+
   events: string[] = [];
   opened: boolean = false;
-
-  @Output() openSidenav = new EventEmitter<void>();
 
   abrir() {
     this.openSidenav.emit()

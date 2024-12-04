@@ -5,15 +5,12 @@
     max-width: 150px;
     min-height: 100%;
     position: relative;
-    background-color: #d3d3d31b;
-    padding: 0.5rem;
-    border-radius: 5px;
     &__promocao {
         background-color: red;
         color: white;
         position: absolute;
-        top: 15px;
-        right: 15px;
+        top: 5px;
+        right: 5px;
         font-size: 0.65rem;
         line-height: 1.4;
         padding: 0 .25rem;
@@ -29,12 +26,10 @@
     }
     &__imagem {
         width: 100%;
-        border-radius: 5px;
     }
     &__info-container {
         display: flex;
         justify-content: space-between;
-        text-transform: uppercase;
         font-weight: 100;
         p {
             margin: 0;
@@ -44,8 +39,8 @@
         background-color: #ffffff;
         border: none;
         position: absolute;
-        top: 110px;
-        right: 13px;
+        top: 115px;
+        right: 8px;
         display: flex;
         align-items: center;
         cursor: pointer;
@@ -55,6 +50,27 @@
             transition: transform .3s ease;
             &:hover {
                 transform: rotate(90deg);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .perfume {
+        max-width: 300px;
+        &__promocao {
+            top: 10px;
+            right: 10px;
+            font-size: .85rem;
+        }
+        &__name {
+            font-size: 1rem;
+        }
+        &__add-to-cart-btn {
+            top: 255px;
+            right: 8px;
+            &-img {
+                width: 35px;
             }
         }
     }
