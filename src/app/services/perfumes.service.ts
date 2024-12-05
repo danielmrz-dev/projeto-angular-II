@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PerfumesService {
 
-  apiLink: string = "https://gist.githubusercontent.com/danielmrz-dev/05a26ba8aa1eb95f5e7f1cd99d13674f/raw/3b87748fdf27292e5d96e2d141693bb2c3cb52ac/gistfile1.txt"
+  apiLink: string = "https://gist.githubusercontent.com/danielmrz-dev/05a26ba8aa1eb95f5e7f1cd99d13674f/raw/62dfb358dc84c8040560269f13aa31b467de7136/gistfile1.txt"
 
   constructor(private readonly _http: HttpClient) { }
 
