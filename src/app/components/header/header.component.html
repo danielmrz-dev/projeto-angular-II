@@ -1,8 +1,15 @@
 <header class="header">
-    <img src="menu-icon.svg" alt="" class="header__icon">
     <h1 class="header__title">Perfumistta</h1>
     <div class="header__icons">
-        <a routerLink="">Cadastrar Perfume</a>
+
+        <button class="header__icon header__icon--hover" [matMenuTriggerFor]="beforeMenu">
+            <img src="menu-icon.svg" alt="" class="header__icon">
+        </button>
+        <mat-menu #beforeMenu="matMenu" xPosition="before" class="mat-menu">
+            <a routerLink="" mat-menu-item>Login</a>
+            <a routerLink="" mat-menu-item>Cadastrar perfume</a>
+        </mat-menu>
+
         <button 
             class="header__icon header__icon--hover" 
             (click)="abrir()"
@@ -10,6 +17,7 @@
             [matBadgeHidden]="badgeHidden"
             matBadgeColor="warn"
         >
+
             <img src="cart-icon.svg" alt="" class="">
         </button>
     </div>

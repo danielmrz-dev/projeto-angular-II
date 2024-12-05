@@ -7,13 +7,15 @@
     top: 0;
     z-index: 2;
     background-color: #ffffff;
+    &__icons {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
     &__icon {
         width: 20px;
         cursor: pointer;
         transition: scale .3s ease, opacity .3s ease;
-        &:hover:not(:last-child) {
-            opacity: .2;
-        }
         &--hover {
             background-color: transparent;
             border: none;
@@ -27,12 +29,8 @@
         font-size: 1.25rem;
         margin: 0;
     }
-    &__icons {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-    }
 }
+
 
 
 @media screen and (min-width: 768px) {
@@ -48,7 +46,7 @@
         &__icons {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 1.5rem;
         }
     }
 }
