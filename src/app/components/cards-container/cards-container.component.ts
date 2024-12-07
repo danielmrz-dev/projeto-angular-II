@@ -1,4 +1,4 @@
-import { Component, EventEmitter, inject, OnInit, Output } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { IPerfume } from '../../interfaces/perfume.interface';
 import { PerfumesService } from '../../services/perfumes.service';
 
@@ -13,8 +13,8 @@ export class CardsContainerComponent implements OnInit {
   perfumesService = inject(PerfumesService)
 
   ngOnInit(): void {
-    this.perfumesService.getPerfumesList().subscribe((perfumesResponse) => {
-      this.perfumesList = perfumesResponse
+    this.perfumesService.getPerfumesList().subscribe((response) => {
+      this.perfumesList = response
     })
   }
 }

@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'Cormorant-Regular';
+    src: url(../assets/fonts/Cormorant-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Cormorant-Bold';
+    src: url(../assets/fonts/Cormorant-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'Cormorant-Semibold';
+    src: url(../assets/fonts/Cormorant-SemiBold.ttf);
+}
+
+$Cormorant-Regular: 'Cormorant-Regular';
+$Cormorant-Semibold: 'Cormorant-Semibold';
+$Cormorant-Bold: 'Cormorant-Bold';
+

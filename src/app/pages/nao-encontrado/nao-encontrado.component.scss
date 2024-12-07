@@ -1,0 +1,19 @@
+p {
+    min-height: 65vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    font-size: 3rem;
+    ::ng-deep .return-btn {
+        font-size: 1.75rem;
+        padding: 1.5rem;
+        background-color: #3616b5ba;
+        color: white; 
+        transition: filter .3s ease;
+        &:hover {
+            filter: brightness(200%);
+        }
+    }
+}

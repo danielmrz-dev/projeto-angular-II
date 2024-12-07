@@ -1,7 +1,7 @@
-import { Injectable, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
 import { IPerfume } from '../interfaces/perfume.interface';
 import { HttpClient } from '@angular/common/http';
+import { Observable, of, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +15,17 @@ export class PerfumesService {
   constructor(private readonly _http: HttpClient) {}
 
   getPerfumesList(): Observable<IPerfume[]> {
-    return this._http.get<IPerfume[]>(this.apiLink)
+    if (this.listaPerfumes.length > 0) {
+      return of(this.listaPerfumes);
+    }
+  
+    return this._http.get<IPerfume[]>(this.apiLink).pipe(
+      tap((response) => {
+        this.listaPerfumes = response; 
+      })
+    );
   }
+  
 
   addItemToCart(perfume: IPerfume) {
     this.carrinho.push(perfume)
@@ -24,5 +33,9 @@ export class PerfumesService {
 
   removeItemFromCart(id: number) {
     this.carrinho.splice(id, 1)
+  }
+
+  registerNewPerfume(newPerfume: IPerfume) {
+    this.listaPerfumes.push(newPerfume)
   }
 }

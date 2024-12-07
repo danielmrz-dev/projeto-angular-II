@@ -1,7 +1,8 @@
 import { Component, inject } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { PerfumesService } from '../../services/perfumes.service';
 import { IPerfume } from '../../interfaces/perfume.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro-perfume',
@@ -11,18 +12,29 @@ import { IPerfume } from '../../interfaces/perfume.interface';
 export class CadastroPerfumeComponent {
   fb = inject(FormBuilder)
   perfumesService = inject(PerfumesService)
+  router = inject(Router)
+
   cadastroPerfumeForm = this.fb.group({
-    id: ['', [Validators.required]],
     perfume: ['', [Validators.required]],
-    preco: ['', [Validators.required]],
-    promocao: ['', [Validators.required]],
-    composicao: this.fb.array([], [Validators.required]),
-    fixacao: ['', [Validators.required]],
-    imagem: ['', [Validators.required]],
+    preco: ['', [Validators.required, Validators.pattern('^[0-9]+(\\.[0-9]+)?$')]],
   })
-  newPerfume: IPerfume = {} as IPerfume
   
   onSubmit() {
     console.log(this.cadastroPerfumeForm.value);
+    const newPerfume: IPerfume = {
+      id: this.perfumesService.listaPerfumes.length + 1,
+      perfume: this.cadastroPerfumeForm.get('perfume')?.value as string,
+      composicao: [],
+      fixacao: "",
+      imagem: "novo-perfume-1.png",
+      preco: Number(this.cadastroPerfumeForm.get('preco')?.value),
+      promocao: false
+    }
+    this.perfumesService.registerNewPerfume(newPerfume)
+    this.router.navigate(['/'])
+  }
+
+  get preco(): FormControl {
+    return this.cadastroPerfumeForm.get('preco') as FormControl
   }
 }

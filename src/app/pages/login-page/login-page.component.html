@@ -11,8 +11,8 @@
                     formControlName="email"
                     appEmailValidator
                 >
-                <mat-error *ngIf="email.hasError('required')">O <strong>Email</strong> é obrigatório</mat-error>
-                <mat-error *ngIf="email.hasError('invalidEmailPattern') && !email.hasError('required')">O <strong>Email</strong> é inválido</mat-error>
+                <mat-error class="mat-error" *ngIf="email.hasError('required')">O <strong class="strong">Email</strong> é obrigatório</mat-error>
+                <mat-error class="mat-error" *ngIf="email.hasError('invalidEmailPattern') && !email.hasError('required')">O <strong class="strong">Email</strong> é inválido</mat-error>
             </mat-form-field>
             <mat-form-field class="example-full-width">
                 <mat-label>Senha</mat-label>
@@ -22,7 +22,7 @@
                     placeholder="Digite sua senha"
                     formControlName="senha"
                 >
-                <mat-error>A <strong>Senha</strong> é obrigatória</mat-error>
+                <mat-error class="mat-error">A <strong class="strong">Senha</strong> é obrigatória</mat-error>
             </mat-form-field>
 
             <button 
