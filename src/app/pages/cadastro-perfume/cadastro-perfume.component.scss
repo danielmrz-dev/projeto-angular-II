@@ -1,0 +1,28 @@
+.form {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__fieldset {
+        display: flex;
+        padding: 2rem;
+        border-radius: 5px;
+    }
+    &__inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        min-width: 320px;
+    }
+    ::ng-deep .form__submit-btn {
+        background-color: #3616b5ba;
+        color: white; 
+        transition: filter .3s ease;
+        &:hover {
+            filter: brightness(200%);
+        }
+        &:disabled {
+            opacity: .3;
+        }
+    }
+}

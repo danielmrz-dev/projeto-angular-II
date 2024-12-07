@@ -1,1 +1,54 @@
-<p>cadastro-perfume works!</p>
+<form [formGroup]="cadastroPerfumeForm" class="form" (ngSubmit)="onSubmit()">
+    <fieldset class="form__fieldset">
+        <legend class="form__fieldset-legend">Cadastre um novo perfume</legend>
+        <div class="form__inputs">
+            <mat-form-field class="example-full-width">
+                <mat-label>Nome do Perfume</mat-label>
+                <input
+                    type="email"
+                    matInput
+                    placeholder="Ex. pat@example.com"
+                    formControlName="perfume"
+                >
+                <mat-error>O <strong>Email</strong> é obrigatório</mat-error>
+                <mat-error>O <strong>Email</strong> é inválido</mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Preço</mat-label>
+                <input
+                    type="text"
+                    matInput
+                    placeholder="Digite o preço"
+                    formControlName="preco"
+                >
+                <mat-error>A <strong>Senha</strong> é obrigatória</mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Fixação</mat-label>
+                <input
+                    type="text"
+                    matInput
+                    placeholder="Digite a composicao"
+                    formControlName="fixacao"
+                >
+                <mat-error>A <strong>Senha</strong> é obrigatória</mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Imagen</mat-label>
+                <input
+                    type="url"
+                    matInput
+                    placeholder="Coloque a url da imagem"
+                    formControlName="imagem"
+                >
+                <mat-error>A <strong>Senha</strong> é obrigatória</mat-error>
+            </mat-form-field>
+
+            <button 
+                mat-flat-button 
+                type="submit" 
+                class="form__submit-btn"
+            >Cadastrar</button>
+        </div>
+    </fieldset>    
+</form>

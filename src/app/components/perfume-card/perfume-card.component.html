@@ -7,7 +7,7 @@
         <span class="perfume__info">50 ml</span>
         <p> {{ perfume.preco | currency : "BRL" }} </p>
     </div>
-    <button class="perfume__add-to-cart-btn" (click)="onClick()">
+    <button class="perfume__add-to-cart-btn" (click)="onClick(perfume)">
         <img src="plus-solid.svg" alt="" class="perfume__add-to-cart-btn-img">
     </button>
 </div>

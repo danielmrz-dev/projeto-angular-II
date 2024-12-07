@@ -4,6 +4,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogContent } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -12,13 +14,17 @@ import { MatDialogContent } from '@angular/material/dialog';
     MatSidenavModule,
     MatRadioModule,
     MatButtonModule,
-    MatDialogContent
+    MatDialogContent,
+    MatInputModule,
+    MatFormFieldModule
   ],
   exports: [
     MatSidenavModule,
     MatRadioModule,
     MatButtonModule,
-    MatDialogContent
+    MatDialogContent,
+    MatInputModule,
+    MatFormFieldModule
   ]
 })
 export class AngularMaterialModule { }

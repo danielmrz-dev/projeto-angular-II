@@ -1,1 +1,36 @@
-<h1>login</h1>
+<form [formGroup]="loginForm" class="form" (ngSubmit)="onSubmit()">
+    <fieldset class="form__fieldset">
+        <legend class="form__fieldset-legend">Faça seu login</legend>
+        <div class="form__inputs">
+            <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input
+                    type="email"
+                    matInput
+                    placeholder="Ex. pat@example.com"
+                    formControlName="email"
+                    appEmailValidator
+                >
+                <mat-error *ngIf="email.hasError('required')">O <strong>Email</strong> é obrigatório</mat-error>
+                <mat-error *ngIf="email.hasError('invalidEmailPattern') && !email.hasError('required')">O <strong>Email</strong> é inválido</mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Senha</mat-label>
+                <input
+                    type="password"
+                    matInput
+                    placeholder="Digite sua senha"
+                    formControlName="senha"
+                >
+                <mat-error>A <strong>Senha</strong> é obrigatória</mat-error>
+            </mat-form-field>
+
+            <button 
+                mat-flat-button 
+                type="submit" 
+                class="form__submit-btn"
+                [disabled]="loginForm.invalid"
+            >Entrar</button>
+        </div>
+    </fieldset>    
+</form>

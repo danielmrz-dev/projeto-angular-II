@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { IPerfume } from '../../interfaces/perfume.interface';
 import { ItemAddedDialogComponent } from '../../components/item-added-dialog/item-added-dialog.component';
+import { PerfumesService } from '../../services/perfumes.service';
 
 @Component({
   selector: 'app-perfumes-list',
@@ -9,24 +10,12 @@ import { ItemAddedDialogComponent } from '../../components/item-added-dialog/ite
   styleUrl: './perfumes-list.component.scss'
 })
 export class PerfumesListComponent {
-  dialog = inject(MatDialog);
-  carrinho: IPerfume[] = []
+  perfumesService = inject(PerfumesService)
+  perfumesList: IPerfume[] = []
 
-  getPerfume(perfume: IPerfume) {
-    const itemJaAdicionado = this.carrinho.some((item) => item.id === perfume.id)
-    if (itemJaAdicionado) {
-      this.dialog.open(ItemAddedDialogComponent, {
-        data: "Não é possível adicionar este item novamente! 🚫"
-      })
-      return
-    };
-    this.carrinho.push(perfume)
-    this.dialog.open(ItemAddedDialogComponent, {
-      data: "Item adicionado ao carrinho! ✅"
+  ngOnInit(): void {
+    this.perfumesService.getPerfumesList().subscribe((perfumesResponse) => {
+      this.perfumesList = perfumesResponse
     })
-  }
-
-  removerItem(id: number) {
-    this.carrinho.splice(id, 1)
   }
 }

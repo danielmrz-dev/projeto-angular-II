@@ -6,8 +6,10 @@
             <img src="menu-icon.svg" alt="" class="header__icon">
         </button>
         <mat-menu #beforeMenu="matMenu" xPosition="before" class="mat-menu">
-            <a routerLink="" mat-menu-item>Login</a>
-            <a routerLink="" mat-menu-item>Cadastrar perfume</a>
+            <a routerLink="/" mat-menu-item>Lista de perfumes</a>
+            <a routerLink="/login" mat-menu-item *ngIf="!isLogged.isLogged">Login</a>
+            <a routerLink="/login" mat-menu-item *ngIf="isLogged.isLogged" (click)="isLogged.logout()">Logout</a>
+            <a routerLink="/cadastro" mat-menu-item>Cadastrar perfume</a>
         </mat-menu>
 
         <button 
