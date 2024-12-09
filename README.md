@@ -9,6 +9,6 @@
 O E-Commerce de Perfumes foi desenvolvido como projeto final do módulo Angular II do Santander Coders 2024, com orientação do professor Luís Fernando Bicalho.
 
 
-# 🚀 Como Executar o Projeto <a id="como-executar-o-projeyo"></a>
+## 🚀 Como Executar o Projeto <a id="como-executar-o-projeyo"></a>
 
 O projeto já está em produção. Basta usar o link de deploy disponível neste repositório.
