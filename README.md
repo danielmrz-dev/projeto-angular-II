@@ -43,10 +43,10 @@ O projeto já está em produção. Basta usar [este link](https://projeto-angula
 ```bash
 
 # Clone este repositório
-$ git clone https://github.com/danielmrz-dev/projeto-angular-I.git
+$ git clone https://github.com/danielmrz-dev/projeto-angular-II.git
 
 # Acesse a pasta do projeto no seu terminal/cmd
-$ cd projeto-angular-I
+$ cd projeto-angular-II
 
 # Instale as dependências
 $ npm install
