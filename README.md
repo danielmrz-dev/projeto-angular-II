@@ -30,23 +30,9 @@ EXTRA
 
 ---
 
-## 👨‍💻 Projeto desenvolvido por:
-
-<table>
-  <tr>
-    <td align="center">
-      <a href="https://www.linkedin.com/in/danielmrz-dev/">
-        <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/137360936?v=4" width="100px;." alt=""/>
-        <br />
-        <sub><b>Daniel Mariz</b></sub>
-      </a>
-      <br />
-      <a href="https://www.linkedin.com/in/danielmrz-dev/" title="Lead Developer "></a>
-    </td>
 
 
-
-    ## 🚀 Como Executar o Projeto <a id="como-executar-o-projeyo"></a>
+## 🚀 Como Executar o Projeto <a id="como-executar-o-projeyo"></a>
 
 ### Opção 1
 
@@ -70,6 +56,19 @@ $ ng serve -o
 
 # A aplicação será aberta na porta:4200 -acesse: http://localhost:4200
 ```
-  
-</tr>
+
+## 👨‍💻 Projeto desenvolvido por:
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://www.linkedin.com/in/danielmrz-dev/">
+        <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/137360936?v=4" width="100px;." alt=""/>
+        <br />
+        <sub><b>Daniel Mariz</b></sub>
+      </a>
+      <br />
+      <a href="https://www.linkedin.com/in/danielmrz-dev/""></a>
+    </td>
+  </tr>
 </table>
